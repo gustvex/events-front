@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div className="sticky top-0 shadow-md w-screen z-999 h-[60px] p-4 flex items-center justify-between ">
+    <div className="sticky top-0 bg-white shadow-md w-screen z-999 h-[60px] p-4 flex items-center justify-between ">
          <Link to="/">
         <div className="bg-secondary w-14 h-10">
 
