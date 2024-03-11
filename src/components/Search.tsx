@@ -2,7 +2,7 @@ import React from 'react';
 import { Search } from "lucide-react";
 function SearchForm() {
   return (
-    <form className='flex justify-center sm:justify-start max-w-[1250px]'>
+    <div className='flex justify-center w-full sm:justify-start '>
       <div className="relative  text-secondary ">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <Search size={18}  color="#7E7E7E" />
@@ -12,9 +12,8 @@ function SearchForm() {
           placeholder="Search..."
           required
         />
-       
       </div>
-    </form>
+    </div>
   );
 }
 

@@ -1,7 +1,24 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
+import { GetId } from "../services/api";
+import { useAtomValue } from "jotai";
+import { idEventAtom } from "../components/Section";
 
 export default function Event() {
+  const [event, setEvent] = useState();
+  const idEvent = useAtomValue(idEventAtom);
+
+  useEffect(() => {
+    GetId(idEvent)
+      .then((data) => {
+        setEvent(data);
+        console.log('deu tudo certo', data);
+      })
+      .catch((error) => {
+        console.log("Erro ao obter dados por EVENT_ID:", error);
+      });
+  }, []);
+
   const ContentSection = [
     {
       date: "Thu, Apr 21 · 22:00 Pm",
@@ -18,8 +35,12 @@ export default function Event() {
         <div className="flex items-center">
           {ContentSection.map((content, index) => (
             <div className="flex flex-col gap-y-4 md:gap-y-6  p-4 ">
-              <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">{content.title}</h1>
-              <div className="text-black font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">{content.date}</div>
+              <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                {content.title}
+              </h1>
+              <div className="text-black font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl">
+                {content.date}
+              </div>
               <div className="flex flex-row items-center whitespace-nowrap">
                 <MapPin size={18} color="#7E7E7E" />
                 <div>{content.location}</div>
@@ -41,7 +62,9 @@ export default function Event() {
 
       <div className="flex justify-center px-6">
         <div className="flex flex-col text-start  max-w-[1000px]">
-          <h2 className="text-2xl font-semibold mb-4 text-center">Descrição do evento</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-center">
+            Descrição do evento
+          </h2>
           <p className="text-gray-600">
             Save the Date 11/11 e 12/11, 22h às 18h, no Rancho Legramanti -
             Cuiabá MT

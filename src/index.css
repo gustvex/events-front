@@ -50,3 +50,30 @@ h4 {
   display: none;
 }
 
+.carousel-container {
+  overflow-x: scroll;
+  scroll-behavior: smooth; /* Adicionando uma transição suave */
+  white-space: nowrap; /* Certificando-se de que os itens não são quebrados em várias linhas */
+}
+
+.carousel-content {
+  display: inline-flex; /* Para que os itens do carrossel sejam exibidos em linha */
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--secondary);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+	border-radius: 10px;
+	border: 1px solid var(--primary);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}

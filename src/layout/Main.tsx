@@ -8,14 +8,12 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="w-screen h-screen overflow-x-hidden md:flex md:flex-col md:items-center">
-      <div className="sticky top-0 ">
-        <Header />
-      </div>
-      <main className="flex-1">{children}</main>
-      <div className="">
-        <Footer />
-      </div>
+    <div className="h-full w-full overflow-x-hidden">
+      <Header />
+
+      <main className="p-6">{children}</main>
+
+      <Footer />
     </div>
   );
 }
