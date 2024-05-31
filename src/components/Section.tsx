@@ -33,16 +33,15 @@ const Section = ({ title }: SectionProps) => {
 
   return (
     <Link to="/event">
-      <div className="">
-        <div className="flex flex-row">
+        <div className="flex shadow-md">
           {contentData.map((content, index) => (
-            <div
-              key={index}
-              className="w-[300px] h-[200px] flex flex-none flex-col items-center bg-primary border-2 border-primary mr-4"
+            <div className="flex flex-col w-[300px] items-center rounded-xl shadow-md  mr-4"
               onClick={() => getContentById(content._id)}
             >
-              <div className="flex flex-1 w-full bg-secondary"></div>
-              <div className="flex flex-1 flex-col w-full p-2 gap-y-1 bg-white text-black text-overflow overflow-hidden " >
+           
+              <img src="img/banda_teste.webp" alt="Descrição da imagem" className="w-full h-24 rounded-t-md" />
+           
+              <div className="flex flex-col w-full p-2 gap-y-1   text-black text-overflow overflow-hidden " >
                 <div>{content.date}</div>
                 <h4>{content.title}</h4>
                 <div className="flex flex-row items-center">
@@ -53,7 +52,6 @@ const Section = ({ title }: SectionProps) => {
             </div>
           ))}
         </div>
-      </div>
     </Link>
   );
 }

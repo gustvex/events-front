@@ -7,8 +7,8 @@ import CaroucelTitle from "../components/carousel/CaroucelTitle";
 
 export default function Home() {
   return (
-    <div className=" space-y-6">
-        <Search />
+    <div className="space-y-6">
+        {/* <Search /> */}
 
         <Caroucel content={<Category />} />
         

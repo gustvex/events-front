@@ -8,7 +8,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="h-full w-full overflow-x-hidden">
+    <div className="h-full w-full overflow-x-hidden bg-primary ">
       <Header />
 
       <main className="p-6">{children}</main>
